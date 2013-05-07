@@ -7,8 +7,9 @@ Real Name
 ===
 A real name users all lower case with underscores in place of spaces
 Example
-```
+```php
 $arr['my_real_name_here'] = 'foo';
+```
 
 All data array members must use this naming.
 
