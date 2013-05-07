@@ -52,27 +52,23 @@ var_dump($obj->getFoo()); //outputs 'Test2'
 Methods
 ===
 
-$this DataModel::_setup($arr)
-==
+### $this DataModel::_setup($arr)
 Sets the data array to use and instantiates the object
 NOTE: should be single dimensional associative array, 
 	multidimensional arrays will be treated as a
 	single dimensional array with array values
 
-$this DataModel::_setData($arr)
-==
+### $this DataModel::_setData($arr)
 Used to set data same as above but on an existing object
 
-(array) DataModel::_getAll()
-==
+### (array) DataModel::_getAll()
 Returns an array similar to that used in _setData except all the values are passed through getters.
 Example
 ```php
 $row = $obj->getAll();
 ```
 
-(string) DataModel::_camelName($name,$prefix=null)
-==
+### (string) DataModel::_camelName($name,$prefix=null)
 When passed a real_name it returns the camel name
 A prefix can be passed to get a usable function name
 Example
@@ -81,8 +77,7 @@ var_dump(DataModel::_camelName('my_name','get')); //outputs 'getMyName'
 var_dump(DataModel::_camelName('my_name'); //outputs 'myName';
 ```
 
-(string) DataModel::_realName($name,$prefix=null)
-==
+### (string) DataModel::_realName($name,$prefix=null)
 Used to obtain a real_name from a function name.
 Example
 ```php

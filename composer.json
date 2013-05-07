@@ -1,14 +1,15 @@
 {
-	 "name":				"openlss/lib-db"
+	 "name":				"openlss/lib-datamodel"
 	,"homepage":			"http://openlss.org"
-	,"description":			"PDO wrapper library with helpers"
+	,"description":			"Implements a callable object from an array of data that can be extended to implement inline formatting."
 	,"license":				"LGPL-3.0+"
 	,"type":				"library"
 	,"keywords": [
-		 "database"
-		,"pdo"
-		,"database abstraction"
-		,"mysql"
+		 "data"
+		,"model"
+		,"setters"
+		,"getters"
+		,"formatters"
 	]
 	,"authors": [
 		 {
@@ -30,6 +31,5 @@
 		"psr-0": {
 			"LSS":	""
 		}
-		,"files":	["src/config.php"]
 	}
 }
