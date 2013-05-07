@@ -17,7 +17,7 @@ Camel Name
 ===
 A camel name is generally used when calling functions
 Example
-```
+```php
 echo $this->getMyRealNameHere();
 ```
 
