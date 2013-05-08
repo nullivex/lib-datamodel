@@ -61,8 +61,16 @@ NOTE: should be single dimensional associative array,
 ### $this DataModel::_setData($arr)
 Used to set data same as above but on an existing object
 
-### (array) DataModel::_getAll()
+### (array) DataModel::_getColumns($cols=array(),$flags=DataModel::KEYS_ASSOC)
+Used to retrieve a specific set of columns
+$cols should be an array of column names (real_name)
+Accepts the same flags as _getAll()
+
+### (array) DataModel::_getAll($flags=DataModel::KEYS_ASSOC)
 Returns an array similar to that used in _setData except all the values are passed through getters.
+Flags can be one of the following
+ * DataModel::KEYS_ASSOC	return will be an associative array
+ * DataModel::KEYS_NUMERIC	return will be a numeric array
 Example
 ```php
 $row = $obj->getAll();
