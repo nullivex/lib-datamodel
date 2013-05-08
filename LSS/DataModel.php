@@ -29,6 +29,9 @@ use \Exception;
 
 class DataModel {
 
+	const KEYS_ASSOC = 0;
+	const KEYS_NUMERIC = 1;
+
 	public $data;
 
 	public static function _setup($data){
@@ -44,11 +47,26 @@ class DataModel {
 		return $this;
 	}
 
-	public function _getAll(){
+	public function _getColumns($cols=array(),$flags=self::KEYS_ASSOC){
+		if(!is_array($cols) || !count($cols)) return array();
 		$row = array();
-		foreach(array_keys($this->data) as $col)
-			$row[$col] = call_user_func(array($this,self::_camelName($col,'get')));
+		foreach($cols as $key => $col){
+			switch($flags){
+				case self::KEYS_ASSOC:
+					$key = $col;
+					break;
+				default:
+				case self::KEYS_NUMERIC:
+					//default
+					break;
+			}
+			$row[$key] = call_user_func(array($this,self::_camelName($col,'get')));
+		}
 		return $row;
+	}
+
+	public function _getAll($flags=self::KEYS_ASSOC){
+		return $this->_getColumns(array_keys($this->data),$flags);
 	}
 
 	//example function would be getMyData which corresponds to $arr['my_data']
